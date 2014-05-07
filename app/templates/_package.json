@@ -1,0 +1,8 @@
+{
+  "name": "<%= _.slugify(appName) %>",
+  "version": "0.0.0",
+  "dependencies": {
+      "grunt-contrib-jasmine" : "~0.5.3",
+      "grunt-template-jasmine-requirejs" : "~0.1.10"
+  }
+}
