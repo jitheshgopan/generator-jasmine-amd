@@ -39,7 +39,12 @@ var JasmineAmdGenerator = yeoman.generators.Base.extend({
   },
 
   app: function () {
-    var getJasmineConfig = fs.readFileSync(this.commonDependanciesFile) || '[]';
+    var getJasmineConfig;
+    try {
+        getJasmineConfig = this.commonDependanciesFile ? fs.readFileSync(this.commonDependanciesFile) : '[]';
+    }catch() {
+        getJasmineConfig = '[]';
+    }
     this.commonDependancies = JSON.parse(commonDependanciesContent);
     var publicDir = this.publicDir = 'public';
     //Make the test directory
