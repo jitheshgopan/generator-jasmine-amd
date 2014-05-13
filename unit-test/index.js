@@ -5,6 +5,9 @@ var _  = require('underscore');
 var fs = require('fs');
 var chalk = require('chalk');
 
+//Stored user config
+var storedConfig = require('../app/helpers/storedConfig');
+
 // Import Underscore.string to separate object, because there are conflict functions (include, reverse, contains)
 _.str = require('underscore.string');
 
@@ -14,11 +17,12 @@ _.mixin(_.str.exports());
 
 var UnittestGenerator = yeoman.generators.NamedBase.extend({
   init: function (args, options, config) {
+      this.config = storedConfig.getConfig();
       this.sourceFileOriginalPath = this.name;
       this.argument('commonDependanciesFile', { type: String, required: false });
       if(!(/^.*?\.js$/.test(this.sourceFileOriginalPath)))
           this.sourceFileOriginalPath += '.js';
-      console.log(this.sourceFileOriginalPath);
+      //console.log(this.sourceFileOriginalPath);
       this.sourceFilePath = this.sourceFileOriginalPath.match(/(.*?)\.js/)[1];
       this.sourceModuleVar = _.camelize(this.sourceFilePath.match(/^(.+\/)*(.+)$/)[2]);
       this.commonDependancies = [];
