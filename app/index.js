@@ -100,8 +100,10 @@ var JasmineAmdGenerator = yeoman.generators.Base.extend({
   },
 
   projectfiles: function () {
-    this.copy('editorconfig', '.editorconfig');
-    this.copy('jshintrc', '.jshintrc');
+      if(!this.options['existing-project']) {
+        this.copy('editorconfig', '.editorconfig');
+        this.copy('jshintrc', '.jshintrc');
+      }
   },
     saveConfigToRc: function() {
         fs.writeFileSync(rcFileName, JSON.stringify(this.config));
