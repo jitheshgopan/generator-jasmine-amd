@@ -1,13 +1,13 @@
 {
   "name": "generator-jasmine-amd",
-  "version": "0.0.0",
-  "description": "Yeoman generator",
+  "version": "0.0.1",
+  "description": "Yeoman generator for webapps with Jasmine for testing and AMD",
   "license": "MIT",
   "main": "app/index.js",
-  "repository": "jitheshgopan/generator-jasmine-amd",
+  "repository": "https://github.com/jitheshgopan/generator-jasmine-amdjitheshgopan/generator-jasmine-amd",
   "author": {
-    "name": "",
-    "email": "",
+    "name": "Jithesh Gopan",
+    "email": "jitheshgopan@gmail.com",
     "url": "https://github.com/jitheshgopan"
   },
   "engines": {
