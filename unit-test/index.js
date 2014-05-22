@@ -15,7 +15,7 @@ _.str = require('underscore.string');
 _.mixin(_.str.exports());
 
 
-var UnittestGenerator = yeoman.generators.NamedBase.extend({
+var UnitTestGenerator = yeoman.generators.NamedBase.extend({
   init: function (args, options, config) {
       this.config = storedConfig.getConfig();
       this.sourceFileOriginalPath = this.name;
@@ -44,4 +44,4 @@ var UnittestGenerator = yeoman.generators.NamedBase.extend({
   }
 });
 
-module.exports = UnittestGenerator;
+module.exports = UnitTestGenerator;
